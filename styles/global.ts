@@ -2,14 +2,14 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
   :root {
-    --colors-primary: #FEBF00;
-    --colors-secundary: #20A483;
-    --colors-white: #FFFFFF;
-    --colors-regular: #B7C8D5;
-    --colors-darker: #191F23;
+    --colors-primary: #2c95ad;
+    --colors-secundary: #20a483;
+    --colors-white: #ffffff;
+    --colors-regular: #b7c8d5;
+    --colors-darker: #191f23;
     --colors-black: #000000;
     --colors-transparent: rgba(0, 0, 0, 0);
-    --colors-btn-primary-hover: #EFB402;
+    --colors-btn-primary-hover: #268297;
     --fonts-default: 'Inter', sans-serif;
   }
 
@@ -18,14 +18,11 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  html {
-    background-color: var(--colors-white);
-  }
-
   html, body {
     padding: 0;
     margin: 0;
     height: 100%;
+    background-color: #edf0f4;
     color: var(--colors-darker);
     font-family: var(--fonts-default);
   }
@@ -38,6 +35,11 @@ export const GlobalStyles = createGlobalStyle`
 
   a {
     text-decoration: none;
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
   }
 
   button {
@@ -92,6 +94,29 @@ export const GlobalStyles = createGlobalStyle`
     &:hover {
       background-color: var(--colors-btn-primary-hover);
       border-color: var(--colors-btn-primary-hover);
+    }
+  }
+
+  .btn-secondary {
+    background-color: var(--bs-gray-200);
+    border-color: var(--bs-gray-200);
+    color: var(--colors-darker);
+
+    &:hover {
+      background-color: var(--bs-gray-300);
+      border-color: var(--bs-gray-300);
+      color: var(--colors-darker);
+    }
+  }
+
+  .rounded-circle {
+    padding: 8px;
+    line-height: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    .wrapper {
+      margin-left: 80px;
     }
   }
 `
