@@ -22,10 +22,13 @@
 
     "baseUrl": ".",
     "paths": {
-      "@/styles/*": ["styles/*"],
+      "@/styles/*": ["src/styles/*"],
       "@/components/*": ["src/components/*"],
+      "@/global/*": ["src/global/*"],
       "@/providers/*": ["src/providers/*"],
-      "@/utils/*": ["src/utils/*"]
+      "@/utils/*": ["src/utils/*"],
+      "@/lib/*": ["src/lib/*"],
+      "@/graphql/*": ["src/graphql/*"]
     }
   },
   "include": ["src"],

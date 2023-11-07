@@ -1,23 +1,31 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { ApolloProvider } from '@apollo/client'
 import { createBrowserRouter, RouterProvider, redirect } from 'react-router-dom'
-import { GlobalStyles } from '../styles/global'
+
 import Root from './routes/Root'
-import Orders from './routes/Orders'
+import NewSale from './routes/NewSale'
+import { client } from '@/lib/apollo'
+
+import { GlobalStyles } from '@/styles/global'
+import 'react-datepicker/dist/react-datepicker.css'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
-    // errorElement: <ErrorPage />,
     children: [
       {
         path: '/',
-        loader: () => redirect('/orders'),
+        loader: () => redirect('/sales/new'),
       },
       {
-        path: 'orders',
-        element: <Orders />,
+        path: 'sales/new',
+        element: <NewSale />,
+      },
+      {
+        path: '*',
+        loader: () => redirect('/'),
       },
     ],
   },
@@ -26,6 +34,8 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <GlobalStyles />
-    <RouterProvider router={router} />
+    <ApolloProvider client={client}>
+      <RouterProvider router={router} />
+    </ApolloProvider>
   </React.StrictMode>,
 )

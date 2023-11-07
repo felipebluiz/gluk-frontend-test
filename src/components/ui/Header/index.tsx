@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { Bell, List, Question, User } from '@phosphor-icons/react'
 import Button from 'react-bootstrap/Button'
-import { Logo } from '@/components/Logo'
+import { Logo } from '@/components/ui/Logo'
 
 import { Container } from './styles'
 import { NavbarContext } from '@/providers/NavbarProvider'
@@ -14,8 +14,8 @@ export const Header = () => {
       <div className="info">
         <Logo />
         <div className="company-details">
-          <h1>Magazine Luiza</h1>
-          <span>43.708.379/0001-00</span>
+          <h1>AB InBev</h1>
+          <span>06.966.259/0001-78</span>
         </div>
       </div>
       <div className="action-buttons">

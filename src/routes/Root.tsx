@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
 
-import { Navbar } from '@/components/Navbar'
-import { Header } from '@/components/Header'
+import { Navbar } from '@/components/ui/Navbar'
+import { Header } from '@/components/ui/Header'
 import { NavbarProvider } from '@/providers/NavbarProvider'
 
 export default function Root() {

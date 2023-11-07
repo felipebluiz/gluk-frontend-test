@@ -10,7 +10,7 @@ export const GlobalStyles = createGlobalStyle`
     --colors-black: #000000;
     --colors-transparent: rgba(0, 0, 0, 0);
     --colors-btn-primary-hover: #268297;
-    --fonts-default: 'Inter', sans-serif;
+    --fonts-default: Open Sans, sans-serif;
   }
 
   * {
@@ -31,6 +31,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     color: var(--colors-darker);
+    letter-spacing: -0.05px;
   }
 
   a {
@@ -60,7 +61,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   ::placeholder {
-    color: var(--colors-regular);
+    color: var(--bs-border-color-translucent);
     opacity: var(--opacity-default);
   }
 
@@ -70,6 +71,27 @@ export const GlobalStyles = createGlobalStyle`
 
   ::-ms-input-placeholder {
     color: var(--colors-regular);
+  }
+
+  .required, .error-message {
+    color: var(--bs-red) !important;
+  }
+
+  .error-message {
+    font-size: 0.8rem;
+    margin-top: 5px;
+  }
+
+  form {
+    label > p {
+      font-size: 0.875rem;
+      color: var(--colors-darker) !important;
+      margin-bottom: 8px !important;
+    }
+
+    .is-invalid {
+      border-color: var(--colors-error-primary);
+    }
   }
 
   input, textarea, button, select, a, div {
@@ -87,13 +109,26 @@ export const GlobalStyles = createGlobalStyle`
     -moz-appearance: none;
   }
 
+  .btn, .btn > div:not(.spinner-border) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    font-family: var(--fonts-default);
+    gap: 8px;
+
+    .spinner-border {
+      position: absolute;
+    }
+  }
+
   .btn-primary {
     background-color: var(--colors-primary);
     border-color: var(--colors-primary);
 
-    &:hover {
-      background-color: var(--colors-btn-primary-hover);
-      border-color: var(--colors-btn-primary-hover);
+    &:hover, &:active {
+      background-color: var(--colors-btn-primary-hover) !important;
+      border-color: var(--colors-btn-primary-hover) !important;
     }
   }
 
@@ -102,16 +137,70 @@ export const GlobalStyles = createGlobalStyle`
     border-color: var(--bs-gray-200);
     color: var(--colors-darker);
 
-    &:hover {
-      background-color: var(--bs-gray-300);
-      border-color: var(--bs-gray-300);
-      color: var(--colors-darker);
+    &:hover, &:active {
+      background-color: var(--bs-gray-300) !important;
+      border-color: var(--bs-gray-300) !important;
+      color: var(--colors-darker) !important;
+    }
+  }
+
+  .btn-success {
+    background-color: #36ac6c;
+    border-color: #36ac6c;
+
+    &:hover, &:active {
+      background-color: #36ac6c !important;
+      border-color: #36ac6c !important;
     }
   }
 
   .rounded-circle {
     padding: 8px;
     line-height: 0;
+  }
+
+  .content-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card {
+    padding: 25px;
+    margin-bottom: 25px;
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-top: 3px;
+    }
+
+    .row {
+      row-gap: 25px;
+    }
+  }
+
+  .table-responsive {
+    border: 1px solid var(--bs-border-color-translucent);
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+
+  .buttons-container {
+    display: flex;
+    justify-content: right;
+    margin-top: 25px;
+  }
+
+  .modal-open: {
+    overflowY: hidden;
+  }
+
+  @media screen and (min-width: 990px) {
+    .modal-open: {
+      overflowY: inherit;
+    }
   }
 
   @media screen and (min-width: 768px) {

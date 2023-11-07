@@ -26,6 +26,7 @@ export const Container = styled.div`
       h1 {
         color: var(--colors-white);
         font-size: 1rem;
+        font-weight: 600;
         line-height: 14px;
       }
 

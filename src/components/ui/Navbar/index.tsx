@@ -3,13 +3,12 @@ import { NavLink } from 'react-router-dom'
 import {
   Bell,
   DotsThreeOutline,
-  File,
   FilePlus,
   Question,
   User,
 } from '@phosphor-icons/react'
 import { NavbarContext } from '@/providers/NavbarProvider'
-import { Logo } from '@/components/Logo'
+import { Logo } from '@/components/ui/Logo'
 
 import { Container } from './styles'
 
@@ -23,25 +22,13 @@ export const Navbar = () => {
       <ul>
         <li>
           <NavLink
-            to="/orders"
-            title="Pedidos"
-            className={({ isActive }) => (isActive ? 'active' : '')}
-            end
-          >
-            <div className="line" />
-            <File size={30} weight="fill" />
-            <span>Pedidos</span>
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/orders/new"
-            title="Novo Pedido"
+            to="/sales/new"
+            title="Cadastrar Venda"
             className={({ isActive }) => (isActive ? 'active' : '')}
           >
             <div className="line" />
             <FilePlus size={30} weight="fill" />
-            <span>Novo Pedido</span>
+            <span>Cadastrar Venda</span>
           </NavLink>
         </li>
         <div className="separator" />
